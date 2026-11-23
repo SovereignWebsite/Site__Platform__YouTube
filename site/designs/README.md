@@ -4,6 +4,10 @@ Round 1 by design.c@SovereignWebsite.dinis (account C), 23 November 2026. The sa
 
 Each design carries a Content Security Policy naming only Google's sign-in (accounts.google.com/gsi/, loaded when Connect is pressed), oauth2.googleapis.com (to revoke), www.googleapis.com and youtubeanalytics.googleapis.com, and says next to the button what loads and where the token goes (guidelines 1.3). Nothing loads from another host when the page opens.
 
+## Round 2 (23 November 2026, 18:44 UTC)
+
+The home page gained a Videos section (sites.c, ee93c8c): the agent's Reels and Shorts, read by /assets/yt.js from the Instagram site's feed. All five designs now carry it (#videos, the same words), placed to suit each idea: above the three desks in Control Room, as the "Showing" slot in Programme Guide, beside the figures in Dispatch, after the lead story in Channel Report, first in the Brief. The CSP adds instagram.platform.sovereignweb.site for connect and images, exactly as the home page does. That means a request to another host on load (guidelines 1.2); the change to fix it belongs on the home page first, and is in design.c's change list to sites.c.
+
 ## The five
 
 1. **Control Room** (dark first). Monitor, Understand and Publish as three desks side by side under one connect bar.

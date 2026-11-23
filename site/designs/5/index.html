@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="color-scheme" content="light dark">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com/gsi/client; frame-src https://accounts.google.com/gsi/; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; connect-src 'self' https://accounts.google.com/gsi/ https://oauth2.googleapis.com https://www.googleapis.com https://youtubeanalytics.googleapis.com; img-src 'self'; base-uri 'none'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com/gsi/client; frame-src https://accounts.google.com/gsi/; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; connect-src 'self' https://instagram.platform.sovereignweb.site https://accounts.google.com/gsi/ https://oauth2.googleapis.com https://www.googleapis.com https://youtubeanalytics.googleapis.com; img-src 'self' https://instagram.platform.sovereignweb.site; base-uri 'none'; form-action 'self'">
 <title>Brief, design 5 of YouTube</title>
 <meta name="description" content="Design 5 of youtube.platform.sovereignweb.site, Brief: Everything on one plain page, for reading fast or printing.">
 <meta property="og:type" content="website">
@@ -64,6 +64,13 @@ button:disabled{cursor:not-allowed}
 .pub{display:grid;gap:.35rem;max-width:36rem}.pub label{font-size:.95rem;color:var(--muted);margin-top:.4rem}
 .pub input,.pub textarea,.pub select{font:inherit;font-size:1rem;padding:.5rem .7rem;border:1px solid var(--ctl);border-radius:6px;background:var(--field);color:var(--fg);min-height:44px}
 .pub .check{display:flex;gap:.5rem;align-items:flex-start;color:var(--fg)}.pub .check input{min-height:auto;margin-top:.35rem}
+.reels{list-style:none;padding:0;margin:1rem 0;display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,16rem),1fr))}
+.reel{display:flex;gap:.9rem;align-items:flex-start;border-top:1px solid var(--line);padding-top:.9rem}
+.reel img{width:90px;height:160px;object-fit:cover;border-radius:6px;background:var(--line);flex:none}
+.reel h3{font-size:1rem;margin:0 0 .3rem;line-height:1.35}
+.reel .note{margin:0 0 .3rem}
+.reel .links{display:flex;flex-direction:column;gap:.2rem;margin:0}
+#connect:disabled,.pub button:disabled{background:var(--field);color:var(--muted);border-color:var(--ctl);cursor:not-allowed}
 .panel table{border-collapse:collapse;width:100%;font-size:.95rem}
 .panel caption{text-align:left;font-weight:700;padding:.4rem 0}
 .panel th,.panel td{text-align:left;vertical-align:top;padding:.45rem .6rem;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
@@ -112,7 +119,7 @@ footer{border-top:1px solid var(--line);margin-top:2rem}
 <main id="main"><p>youtube.platform.sovereignweb.site</p><h1>Your YouTube channel, from your own browser</h1><p>Connect your channel with Google, then monitor it, understand it and publish to it, all from this page, with YouTube's official API. An unofficial site, not made or endorsed by YouTube or Google.</p><div class="actions"><button id="connect" type="button">Connect with Google</button><button id="forget" type="button" hidden>Disconnect</button></div>
 <p class="sent">Pressing Connect loads Google's sign-in from accounts.google.com; after that your token goes only to Google's APIs (www.googleapis.com, youtubeanalytics.googleapis.com). This page names only those hosts in its security policy.</p>
 <p id="status" class="status" role="status" aria-live="polite"></p>
-<section class="panel" aria-labelledby="monitor-h"><h2 id="monitor-h">Monitor</h2><div id="monitor"><p class="note">Your channel's subscribers, views and latest uploads appear here once connected.</p></div></section><section class="panel" aria-labelledby="understand-h"><h2 id="understand-h">Understand</h2><div id="understand"><p class="note">The last 28 days, day by day: views, minutes watched, average view and subscribers, from the YouTube Analytics API.</p></div></section><section class="panel" aria-labelledby="publish-h"><h2 id="publish-h">Publish</h2>
+<section class="panel" aria-labelledby="videos-h"><h2 id="videos-h">Videos</h2><p>What the agent is publishing: each video with its credits and sources, and links to YouTube and Instagram once posted. Posting runs under a written rule; the owner reviews what is published.</p><div id="videos"><p class="note">Loading the list of videos...</p></div></section><section class="panel" aria-labelledby="monitor-h"><h2 id="monitor-h">Monitor</h2><div id="monitor"><p class="note">Your channel's subscribers, views and latest uploads appear here once connected.</p></div></section><section class="panel" aria-labelledby="understand-h"><h2 id="understand-h">Understand</h2><div id="understand"><p class="note">The last 28 days, day by day: views, minutes watched, average view and subscribers, from the YouTube Analytics API.</p></div></section><section class="panel" aria-labelledby="publish-h"><h2 id="publish-h">Publish</h2>
 <div id="publishbox" hidden>
 <form id="publish" class="pub">
 <label for="file">Video file</label>

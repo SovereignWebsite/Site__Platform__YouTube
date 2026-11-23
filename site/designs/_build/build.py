@@ -38,8 +38,8 @@ FAMILY = [("https://sovereignwebsite.ai/", "Sovereign Website"), ("https://sover
           ("https://newsroom.sgit.ai/", "Newsroom")]
 CSP = ("default-src 'self'; script-src 'self' https://accounts.google.com/gsi/client; "
        "frame-src https://accounts.google.com/gsi/; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; "
-       "connect-src 'self' https://accounts.google.com/gsi/ https://oauth2.googleapis.com https://www.googleapis.com https://youtubeanalytics.googleapis.com; "
-       "img-src 'self'; base-uri 'none'; form-action 'self'")
+       "connect-src 'self' https://instagram.platform.sovereignweb.site https://accounts.google.com/gsi/ https://oauth2.googleapis.com https://www.googleapis.com https://youtubeanalytics.googleapis.com; "
+       "img-src 'self' https://instagram.platform.sovereignweb.site; base-uri 'none'; form-action 'self'")
 
 BASE = """
 *{box-sizing:border-box}
@@ -83,6 +83,13 @@ button:disabled{cursor:not-allowed}
 .pub{display:grid;gap:.35rem;max-width:36rem}.pub label{font-size:.95rem;color:var(--muted);margin-top:.4rem}
 .pub input,.pub textarea,.pub select{font:inherit;font-size:1rem;padding:.5rem .7rem;border:1px solid var(--ctl);border-radius:6px;background:var(--field);color:var(--fg);min-height:44px}
 .pub .check{display:flex;gap:.5rem;align-items:flex-start;color:var(--fg)}.pub .check input{min-height:auto;margin-top:.35rem}
+.reels{list-style:none;padding:0;margin:1rem 0;display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fill,minmax(min(100%,16rem),1fr))}
+.reel{display:flex;gap:.9rem;align-items:flex-start;border-top:1px solid var(--line);padding-top:.9rem}
+.reel img{width:90px;height:160px;object-fit:cover;border-radius:6px;background:var(--line);flex:none}
+.reel h3{font-size:1rem;margin:0 0 .3rem;line-height:1.35}
+.reel .note{margin:0 0 .3rem}
+.reel .links{display:flex;flex-direction:column;gap:.2rem;margin:0}
+#connect:disabled,.pub button:disabled{background:var(--field);color:var(--muted);border-color:var(--ctl);cursor:not-allowed}
 .panel table{border-collapse:collapse;width:100%;font-size:.95rem}
 .panel caption{text-align:left;font-weight:700;padding:.4rem 0}
 .panel th,.panel td{text-align:left;vertical-align:top;padding:.45rem .6rem;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
@@ -169,6 +176,14 @@ def connect():
 <p id="status" class="status" role="status" aria-live="polite"></p>"""
 
 
+VID = ("What the agent is publishing: each video with its credits and sources, and links to YouTube and Instagram once posted. "
+       "Posting runs under a written rule; the owner reviews what is published.")
+
+
+def videos(h="h2"):
+    return f'<section class="panel" aria-labelledby="videos-h"><{h} id="videos-h">Videos</{h}><p>{VID}</p><div id="videos"><p class="note">Loading the list of videos...</p></div></section>'
+
+
 def monitor(h="h2"):
     return f'<section class="panel" aria-labelledby="monitor-h"><{h} id="monitor-h">Monitor</{h}><div id="monitor"><p class="note">{MON}</p></div></section>'
 
@@ -239,7 +254,7 @@ def d1():
     return head(1, CSS1) + f"""<div class="wrap">{chrome(1)}
 <header class="mast"><a class="brand" href="/">YouTube</a>{own()}</header>
 <main id="main"><div class="top"><div><p class="k">{MARK}</p><h1>{H1}</h1><p>{INTRO}</p></div><div>{connect()}</div></div>
-<div class="desks">{monitor()}{understand()}{publish()}</div>
+{videos()}<div class="desks">{monitor()}{understand()}{publish()}</div>
 <h2 class="plain-h">{HOWT}</h2>{ul(HOW)}
 </main>
 """ + footer().replace("</body>", "</div></body>")
@@ -272,6 +287,7 @@ def d2():
 <main id="main"><p class="k">Today's guide · {MARK}</p><h1>{H1}</h1><p>{INTRO}</p>
 <ol class="guide">
 <li><span class="slot">First</span><div><h2>Connect</h2>{connect()}</div></li>
+<li><span class="slot">Showing</span>{videos()}</li>
 <li><span class="slot">Then</span>{monitor()}</li>
 <li><span class="slot">28 days</span>{understand()}</li>
 <li><span class="slot">Your call</span>{publish()}</li>
@@ -310,7 +326,7 @@ def d3():
 <main id="main"><p class="k">Dispatch · {MARK}</p><h1>{H1}</h1><p>{INTRO}</p>{connect()}
 <div class="desk"><div class="slip">{publish()}</div>
 <div class="guards"><h2>{HOWT}</h2>{ul(HOW)}</div></div>
-<div class="figures">{monitor()}{understand()}</div>
+<div class="figures">{videos()}{monitor()}{understand()}</div>
 </main>
 """ + footer().replace("</body>", "</div></body>")
 
@@ -343,6 +359,7 @@ def d4():
 <header class="mast"><a class="brand" href="/">YouTube</a>{own()}</header>
 <main id="main"><div class="masthead"><p class="k">Channel report · {MARK}</p><h1>{H1}</h1><p>{INTRO}</p>{connect()}</div>
 <div class="lead">{understand()}</div>
+{videos()}
 <div class="cols">{monitor()}{publish()}<div><h2>{HOWT}</h2>{ul(HOW)}</div></div>
 </main>
 """ + footer().replace("</body>", "</div></body>")
@@ -366,7 +383,7 @@ def d5():
     return head(5, CSS5) + f"""<div class="wrap">{chrome(5)}
 <header><a class="brand" href="/">YouTube</a>{own()}</header>
 <main id="main"><p>{MARK}</p><h1>{H1}</h1><p>{INTRO}</p>{connect()}
-{monitor()}{understand()}{publish()}
+{videos()}{monitor()}{understand()}{publish()}
 <h2>{HOWT}</h2>{ul(HOW)}</main>
 """ + footer().replace("</body>", "</div></body>")
 
