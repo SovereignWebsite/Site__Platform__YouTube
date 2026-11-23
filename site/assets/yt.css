@@ -1,0 +1,25 @@
+main,.top{max-width:60rem}
+.signin{display:grid;grid-template-columns:1fr auto;gap:.4rem .6rem;align-items:end;margin:1.2rem 0 .5rem}
+.signin label{grid-column:1/-1;font-size:.85rem;color:var(--muted)}
+.signin input,.signin button,button.small,select{font:inherit;padding:.5rem .7rem;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);min-height:44px}
+.signin input{min-width:0}
+.signin button{background:var(--accent);color:var(--bg);border-color:var(--accent);font-weight:600;cursor:pointer}
+button.small{min-height:36px;padding:.25rem .6rem;cursor:pointer;color:var(--accent);font-weight:600}
+input:focus-visible,button:focus-visible,select:focus-visible{outline:3px solid var(--accent);outline-offset:2px}
+#forget{margin:.3rem 0}
+.status{color:var(--fg);font-weight:600;min-height:1.6em}
+.note{font-size:.9rem}
+.scroll{overflow-x:auto;margin:1rem 0}
+table{border-collapse:collapse;width:100%;font-size:.9rem}
+caption{text-align:left;font-weight:600;padding:.4rem 0;color:var(--fg)}
+th,td{text-align:left;vertical-align:top;padding:.45rem .6rem;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+thead th{color:var(--muted);font-weight:600;font-size:.8rem}
+.actions{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+.actions button,.pub button{font:inherit;padding:.5rem .9rem;border-radius:6px;min-height:44px;cursor:pointer;border:1px solid var(--accent);font-weight:600}
+#connect,.pub button{background:var(--accent);color:var(--bg)}#forget{background:var(--bg);color:var(--accent)}
+button:disabled{opacity:.6;cursor:not-allowed}
+.stats{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;margin:1rem 0}.stats dt{font-size:.8rem;color:var(--muted)}.stats dd{margin:0;font-size:1.6rem;font-weight:600}
+.pub{display:grid;gap:.35rem;max-width:36rem}.pub label{font-size:.85rem;color:var(--muted);margin-top:.4rem}
+.pub input,.pub textarea,.pub select{font:inherit;padding:.5rem .7rem;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--fg);min-height:44px}
+.pub .check{display:flex;gap:.5rem;align-items:flex-start;color:var(--fg)}.pub .check input{min-height:auto;margin-top:.35rem}
+textarea:focus-visible,input:focus-visible,select:focus-visible,button:focus-visible{outline:3px solid var(--accent);outline-offset:2px}

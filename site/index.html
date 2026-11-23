@@ -20,6 +20,7 @@
 <meta name="twitter:title" content="YouTube">
 <meta name="twitter:description" content="Manage, monitor and publish to your YouTube channel from your own browser, with YouTube's official API. An unofficial site, not made or endorsed by YouTube or Google.">
 <meta name="twitter:image" content="https://youtube.platform.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="stylesheet" href="/assets/yt.css">
 <link rel="canonical" href="https://youtube.platform.sovereignweb.site/">
 <style>
 :root{--bg:#fbfaf7;--fg:#1d1d1b;--muted:#5d5c57;--accent:#2f6b4f;--line:#e4e1d8}
@@ -90,9 +91,47 @@ code{font-size:.9em}main a,main code{overflow-wrap:anywhere}
 </header>
 <main id="main">
 <div class="mark">youtube.platform.sovereignweb.site</div>
-<h1>YouTube</h1>
-<p>Manage, monitor and publish to your YouTube channel from your own browser, with YouTube's official API. An unofficial site, not made or endorsed by YouTube or Google.</p>
-<p>This site was made by one request to the Sovereign Website pipeline. Its files, its history and its address are in a repository its owner controls, and can move anywhere.</p>
+<h1>Your YouTube channel, from your own browser</h1>
+<p>Connect your channel with Google, then monitor it, understand it and publish to it, all from this page, with YouTube's official API. An unofficial site, not made or endorsed by YouTube or Google.</p>
+
+<div class="actions">
+  <button id="connect" type="button">Connect with Google</button>
+  <button id="forget" type="button" hidden>Disconnect</button>
+</div>
+<p id="status" class="status" role="status" aria-live="polite"></p>
+
+<h2>Monitor</h2>
+<div id="monitor"><p class="note">Your channel's subscribers, views and latest uploads appear here once connected.</p></div>
+
+<h2>Understand</h2>
+<div id="understand"><p class="note">The last 28 days, day by day: views, minutes watched, average view and subscribers, from the YouTube Analytics API.</p></div>
+
+<h2>Publish</h2>
+<div id="publishbox" hidden>
+<form id="publish" class="pub">
+  <label for="file">Video file</label>
+  <input id="file" type="file" accept="video/*" required>
+  <label for="title">Title</label>
+  <input id="title" type="text" maxlength="100" required>
+  <label for="desc">Description</label>
+  <textarea id="desc" rows="4" maxlength="5000"></textarea>
+  <label for="privacy">Visibility</label>
+  <select id="privacy"><option value="private" selected>Private</option><option value="unlisted">Unlisted</option><option value="public">Public</option></select>
+  <label class="check"><input id="confirm" type="checkbox"> <span>I want to upload this video to my channel now.</span></label>
+  <button type="submit">Publish</button>
+</form>
+<p id="pubstatus" class="status" role="status" aria-live="polite"></p>
+</div>
+<p class="note">Publishing asks Google for one more permission (upload) the first time, and starts as private unless you choose otherwise.</p>
+
+<h2>How it works, and what stays with you</h2>
+<ul class="plain">
+<li>Connecting uses Google's own sign-in for web pages, which gives this page a short-lived access token with only a client ID: no client secret, no server (<a href="https://developers.google.com/identity/oauth2/web/guides/use-token-model">token model</a>; the secret is "only for server-side token exchange", <a href="https://developers.google.com/identity/oauth2/web/guides/get-google-api-clientid">client ID set-up</a>). Google's sign-in script loads only when you press Connect.</li>
+<li>The token is kept in this tab's memory only and is sent only to Google's APIs. Disconnect revokes it; closing the tab forgets it. Nothing is stored and there are no cookies of ours.</li>
+<li>It asks for reading first (<code>youtube.readonly</code>, <code>yt-analytics.readonly</code>) and for <code>youtube.upload</code> only when you publish, the narrowest scopes, as Google advises (<a href="https://developers.google.com/youtube/v3/guides/authentication">authentication</a>).</li>
+<li>Limits: by default 10,000 quota units a day for reading, and a separate 100 uploads a day (<a href="https://developers.google.com/youtube/v3/determine_quota_cost">quota costs</a>, <a href="https://developers.google.com/youtube/v3/docs/videos/insert">videos.insert</a>). An upload with no visibility set would default to public, so this page always sets one (<a href="https://developers.google.com/youtube/v3/docs/videos/insert">videos.insert</a>).</li>
+<li>For the owner: add this site's address to the OAuth client's Authorised JavaScript origins and put the client ID (not the secret) in <code>data/youtube.json</code>.</li>
+</ul>
 <footer>
 <nav class="site-links" aria-label="About this site">
   <a href="/start/">Start here</a>
@@ -102,5 +141,6 @@ code{font-size:.9em}main a,main code{overflow-wrap:anywhere}
 </nav>
 A sovereign website, made with the <a href="https://sovereignwebsite.org/">open pattern</a>. Source: <a href="https://github.com/SovereignWebsite/Site__Platform__YouTube">github.com/SovereignWebsite/Site__Platform__YouTube</a>.</footer>
 </main>
+<script src="/assets/yt.js" defer></script>
 </body>
 </html>
