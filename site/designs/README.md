@@ -6,7 +6,7 @@ Each design carries a Content Security Policy naming only Google's sign-in (acco
 
 ## Round 2 (23 November 2026, 18:44 UTC)
 
-The home page gained a Videos section (sites.c, ee93c8c): the agent's Reels and Shorts, read by /assets/yt.js from the Instagram site's feed. All five designs now carry it (#videos, the same words), placed to suit each idea: above the three desks in Control Room, as the "Showing" slot in Programme Guide, beside the figures in Dispatch, after the lead story in Channel Report, first in the Brief. The CSP adds instagram.platform.sovereignweb.site for connect and images, exactly as the home page does. That means a request to another host on load (guidelines 1.2); the change to fix it belongs on the home page first, and is in design.c's change list to sites.c.
+The home page gained a Videos section (sites.c, ee93c8c): the agent's Reels and Shorts, read by /assets/yt.js from the Instagram site's feed. All five designs now carry it (#videos, the same words), placed to suit each idea: above the three desks in Control Room, as the "Showing" slot in Programme Guide, beside the figures in Dispatch, after the lead story in Channel Report, first in the Brief. The CSP adds instagram.platform.sovereignweb.site for connect and images, exactly as the home page does. Since sites.c's 42608a1 the list loads only when "Show the videos" is pressed, and the page says where it comes from first (guidelines 1.3); the designs follow, so nothing loads from another host on open.
 
 ## The five
 

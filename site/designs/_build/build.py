@@ -181,7 +181,7 @@ VID = ("What the agent is publishing: each video with its credits and sources, a
 
 
 def videos(h="h2"):
-    return f'<section class="panel" aria-labelledby="videos-h"><{h} id="videos-h">Videos</{h}><p>{VID}</p><div id="videos"><p class="note">Loading the list of videos...</p></div></section>'
+    return f'<section class="panel" aria-labelledby="videos-h"><{h} id="videos-h">Videos</{h}><p>{VID}</p><div id="videos"><p class="note">The list and its pictures come from the agent\'s Instagram site, instagram.platform.sovereignweb.site. Nothing is fetched until you press the button.</p><button id="showvideos" type="button" class="small">Show the videos</button></div></section>'
 
 
 def monitor(h="h2"):
