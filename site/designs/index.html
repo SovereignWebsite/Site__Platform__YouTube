@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com/gsi/client; frame-src https://accounts.google.com/gsi/; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; connect-src 'self' https://accounts.google.com/gsi/ https://oauth2.googleapis.com https://www.googleapis.com https://youtubeanalytics.googleapis.com; img-src 'self'; base-uri 'none'; form-action 'self'">
+<title>Five designs, YouTube</title>
+<meta name="description" content="Five designs of youtube.platform.sovereignweb.site, the same channel tools in five ideas, side by side.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="YouTube">
+<meta property="og:locale" content="en_GB">
+<meta property="og:url" content="https://youtube.platform.sovereignweb.site/designs/">
+<meta property="og:title" content="Five designs, YouTube">
+<meta property="og:description" content="Five designs of youtube.platform.sovereignweb.site, the same channel tools in five ideas, side by side.">
+<meta property="og:image" content="https://youtube.platform.sovereignweb.site/assets/share/card-1200x630.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="YouTube">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Five designs, YouTube">
+<meta name="twitter:description" content="Five designs of youtube.platform.sovereignweb.site, the same channel tools in five ideas, side by side.">
+<meta name="twitter:image" content="https://youtube.platform.sovereignweb.site/assets/share/card-1200x630.jpg">
+<link rel="canonical" href="https://youtube.platform.sovereignweb.site/designs/">
+<style>
+*{box-sizing:border-box}
+html{color-scheme:light dark;-webkit-text-size-adjust:100%}
+body{margin:0;font:1.0625rem/1.6 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:var(--bg);color:var(--fg);overflow-wrap:break-word}
+a{color:var(--link)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.skip{position:absolute;left:-999px;top:.5rem;z-index:99;background:var(--bg);color:var(--fg);padding:.5rem .9rem;border:2px solid var(--focus)}
+.skip:focus{left:1rem}
+main *{min-width:0}
+.chrome{display:flex;flex-wrap:wrap;gap:.5rem;align-items:center;justify-content:flex-end;position:relative;z-index:5;padding-top:.5rem}
+.chrome details{position:relative}
+.chrome summary{cursor:pointer;list-style:none;min-height:44px;display:inline-flex;align-items:center;padding:.35rem .8rem;border:1px solid var(--ctl);border-radius:999px;font-size:.9rem;background:var(--bg);color:var(--fg)}
+.chrome summary::-webkit-details-marker{display:none}
+.chrome summary::after{content:"";width:.45rem;height:.45rem;margin-left:.5rem;border-right:2px solid currentColor;border-bottom:2px solid currentColor;transform:rotate(45deg) translateY(-2px)}
+.chrome details[open] summary::after{transform:rotate(-135deg)}
+.chrome ul{position:absolute;right:0;top:calc(100% + .35rem);margin:0;padding:.4rem;list-style:none;min-width:15rem;max-width:calc(100vw - 2rem);background:var(--bg);color:var(--fg);border:1px solid var(--ctl);border-radius:.6rem;box-shadow:0 .6rem 1.6rem rgba(0,0,0,.25)}
+.chrome li a{display:block;padding:.55rem .7rem;border-radius:.4rem;color:var(--fg);text-decoration:none;font-size:.95rem}
+.chrome li a:hover,.chrome li a:focus-visible{background:var(--hover)}
+.chrome li a[aria-current]{font-weight:700;text-decoration:underline}
+.chrome .gap{border-top:1px solid var(--ctl);margin-top:.3rem;padding-top:.3rem}
+.chrome small{display:block;font-size:.85rem;color:var(--muted);font-weight:400}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.signin{display:grid;grid-template-columns:1fr auto auto;gap:.4rem .6rem;align-items:end;margin:1.25rem 0 .5rem}
+.signin label{font-size:.9rem;color:var(--muted);grid-row:1}
+.signin label[for=__none]{grid-column:2}
+.signin input,.signin select,.signin button{font:inherit;font-size:1rem;padding:.55rem .7rem;border:1px solid var(--ctl);border-radius:6px;background:var(--field);color:var(--fg);min-height:44px}
+.signin input{grid-column:1;grid-row:2}.signin select{grid-column:2;grid-row:2}
+.signin button{grid-column:3;grid-row:2;background:var(--accent);color:var(--on-accent);border-color:var(--accent);font-weight:700;cursor:pointer}
+@media (max-width:30rem){.signin{grid-template-columns:1fr auto}.signin button{grid-column:1/-1;grid-row:3}}
+.status{font-weight:700;min-height:1.6em}
+.note{font-size:.95rem;color:var(--muted)}
+button.small,.out select{font:inherit;font-size:1rem;padding:.4rem .7rem;border:1px solid var(--ctl);border-radius:6px;background:var(--field);color:var(--link);font-weight:700;min-height:44px;cursor:pointer}
+.out select{color:var(--fg);font-weight:400}
+.out label{color:var(--muted)}
+.actions{display:flex;flex-wrap:wrap;gap:.6rem;margin:1rem 0}
+.actions button,.pub button{font:inherit;font-size:1rem;padding:.55rem 1rem;border-radius:6px;min-height:44px;cursor:pointer;border:1px solid var(--accent);font-weight:700}
+#connect,.pub button{background:var(--accent);color:var(--on-accent)}#forget{background:var(--field);color:var(--link);border-color:var(--ctl)}
+button:disabled{cursor:not-allowed}
+.stats{display:flex;flex-wrap:wrap;gap:1rem 2.5rem;margin:1rem 0}.stats dt{font-size:.9rem;color:var(--muted)}.stats dd{margin:0;font-size:1.6rem;font-weight:700}
+.pub{display:grid;gap:.35rem;max-width:36rem}.pub label{font-size:.95rem;color:var(--muted);margin-top:.4rem}
+.pub input,.pub textarea,.pub select{font:inherit;font-size:1rem;padding:.5rem .7rem;border:1px solid var(--ctl);border-radius:6px;background:var(--field);color:var(--fg);min-height:44px}
+.pub .check{display:flex;gap:.5rem;align-items:flex-start;color:var(--fg)}.pub .check input{min-height:auto;margin-top:.35rem}
+.panel table{border-collapse:collapse;width:100%;font-size:.95rem}
+.panel caption{text-align:left;font-weight:700;padding:.4rem 0}
+.panel th,.panel td{text-align:left;vertical-align:top;padding:.45rem .6rem;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.panel thead th{color:var(--muted);font-size:.9rem}
+#forget{margin:.3rem 0}
+.out h3{font-size:1.1rem;margin:1rem 0 .3rem}
+.out table{border-collapse:collapse;width:100%;font-size:.95rem}
+.out caption{text-align:left;font-weight:700;padding:.4rem 0}
+.out th,.out td{text-align:left;vertical-align:top;padding:.45rem .6rem;border-bottom:1px solid var(--line);overflow-wrap:anywhere}
+.out thead th{color:var(--muted);font-size:.9rem}
+.scroll{overflow-x:auto;margin:1rem 0}
+.out table{border-collapse:collapse;width:100%;font-size:.95rem}
+.out caption{text-align:left;font-weight:700;padding:.4rem 0}
+.out th,.out td{text-align:left;vertical-align:top;padding:.45rem .6rem;border-bottom:1px solid var(--line)}
+.out thead th{color:var(--muted);font-size:.9rem}
+.out th .sub{display:block;font-weight:400;color:var(--muted);font-size:.875rem}
+.out tr.group th{background:var(--hover);font-size:.875rem;letter-spacing:.06em;text-transform:uppercase}
+.out td.vals{white-space:pre-wrap;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;overflow-wrap:anywhere}
+.out td.ok{color:var(--ok);font-weight:700;white-space:nowrap}
+.out td.bad{color:var(--bad);font-weight:700}
+.out td.num{text-align:right;font-variant-numeric:tabular-nums}
+.sent{font-size:.9rem;color:var(--muted)}
+footer{padding:2rem 0 3rem;font-size:.95rem}
+footer nav{display:flex;flex-wrap:wrap;gap:.25rem 1.25rem}
+footer nav a{min-height:44px;display:inline-flex;align-items:center}
+@media print{.chrome,.skip,.actions,#publishbox{display:none}}
+
+:root{--bg:#f6f5f2;--fg:#151515;--muted:#4f4c47;--link:#a1281b;--focus:#a1281b;--ctl:#77736c;--hover:#e9e6df;--card:#fff;--line:#dcd8cf;--field:#fff;--accent:#a1281b;--on-accent:#fff;--ok:#1d6b45;--bad:#a13a2a}
+@media (prefers-color-scheme:dark){:root{--bg:#121212;--fg:#efede8;--muted:#bdb9b1;--link:#ff9d8a;--focus:#ff9d8a;--ctl:#85817a;--hover:#222;--card:#1c1c1c;--line:#333;--field:#1a1a1a;--accent:#ff9d8a;--on-accent:#1a0805;--ok:#86ddb3;--bad:#ff9b8a}}
+.wrap{max-width:76rem;margin:0 auto;padding:0 1rem}
+.brand{font-weight:800;color:var(--fg);text-decoration:none;min-height:44px;display:inline-flex;align-items:center}
+h1{font:700 clamp(2rem,5.5vw,3rem)/1.1 Georgia,serif;margin:1rem 0 .75rem}
+.cards{list-style:none;margin:1.5rem 0 3rem;padding:0;display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fit,minmax(min(100%,20rem),1fr))}
+.cards li{background:var(--card);border:1px solid var(--line);border-radius:.6rem;overflow:hidden}
+.cards img{display:block;max-width:100%;height:auto;aspect-ratio:16/10;object-fit:cover;object-position:top;width:100%;border-bottom:1px solid var(--line)}
+.cards .b{padding:1rem}.cards h2{font-size:1.2rem;margin:0 0 .3rem}.cards p{margin:.3rem 0}
+footer{border-top:1px solid var(--line)}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="wrap"><nav class="chrome" aria-label="Designs and the Sovereign Website family">
+<details><summary>Choose a design</summary><ul><li><a href="/designs/1/">1. Control Room<small>A channel control room, dark first: monitor, understand and publish as three desks side by side.</small></a></li><li><a href="/designs/2/">2. Programme Guide<small>A printed programme guide: each part of the page a slot in the day's listings.</small></a></li><li><a href="/designs/3/">3. Dispatch<small>Publishing first, as a dispatch slip with its safeguards in view, the figures behind it.</small></a></li><li><a href="/designs/4/">4. Channel Report<small>A channel report: the 28 days as the lead story, the rest as its sections.</small></a></li><li><a href="/designs/5/">5. Brief<small>Everything on one plain page, for reading fast or printing.</small></a></li><li class="gap"><a href="/designs/">All five, side by side</a></li><li><a href="/">The site as it is now</a></li></ul></details>
+<details><summary>Sovereign Website</summary><ul><li><a href="/start/">Start here</a></li><li><a href="/agents/">Use with your AI</a></li><li><a href="/admin/">How this site was made</a></li><li class="gap"><a href="/policy/">How this site is governed</a></li><li><a href="https://sovereignwebsite.ai/">Sovereign Website</a></li><li><a href="https://sovereignwebsite.org/">Principles</a></li><li><a href="https://sovereignwebsite.site/">Hosted</a></li><li><a href="https://hub.sovereignweb.site/">Hub</a></li><li><a href="https://agents.sovereignweb.site/">Agents</a></li><li><a href="https://vault.sovereignwebsite.site/">Vault</a></li><li><a href="https://agenticcells.ai/">AgentiCCells</a></li><li><a href="https://riskmandate.ai/">RiskMandate</a></li><li><a href="https://newsroom.sgit.ai/">Newsroom</a></li></ul></details>
+</nav>
+<header><a class="brand" href="/">YouTube</a></header>
+<main id="main"><h1>Five designs of this site</h1>
+<p>The same tools and the same words, in five ideas. Each one keeps the page's own script, so Connect, Monitor, Understand and Publish behave the same in all five. The owner picks one; the keeper makes it the site.</p>
+<ul class="cards"><li><img src="/designs/1/shot-1366.webp" alt="Design 1, Control Room, at desktop width" width="1366" height="854" loading="lazy"><div class="b"><h2><a href="/designs/1/">1. Control Room</a></h2><p>A channel control room, dark first: monitor, understand and publish as three desks side by side.</p><p><strong>Recommended by the designer.</strong></p></div></li><li><img src="/designs/2/shot-1366.webp" alt="Design 2, Programme Guide, at desktop width" width="1366" height="854" loading="lazy"><div class="b"><h2><a href="/designs/2/">2. Programme Guide</a></h2><p>A printed programme guide: each part of the page a slot in the day's listings.</p></div></li><li><img src="/designs/3/shot-1366.webp" alt="Design 3, Dispatch, at desktop width" width="1366" height="854" loading="lazy"><div class="b"><h2><a href="/designs/3/">3. Dispatch</a></h2><p>Publishing first, as a dispatch slip with its safeguards in view, the figures behind it.</p></div></li><li><img src="/designs/4/shot-1366.webp" alt="Design 4, Channel Report, at desktop width" width="1366" height="854" loading="lazy"><div class="b"><h2><a href="/designs/4/">4. Channel Report</a></h2><p>A channel report: the 28 days as the lead story, the rest as its sections.</p></div></li><li><img src="/designs/5/shot-1366.webp" alt="Design 5, Brief, at desktop width" width="1366" height="854" loading="lazy"><div class="b"><h2><a href="/designs/5/">5. Brief</a></h2><p>Everything on one plain page, for reading fast or printing.</p></div></li></ul></main>
+<footer>
+<nav aria-label="About this site"><a href="/start/">Start here</a> <a href="/agents/">Use with your AI</a> <a href="/admin/">How this site was made</a> <a href="/policy/">How this site is governed</a></nav>
+<p>A sovereign website, made with the <a href="https://sovereignwebsite.org/">open pattern</a>. Source: <a href="https://github.com/SovereignWebsite/Site__Platform__YouTube">github.com/SovereignWebsite/Site__Platform__YouTube</a>.</p>
+</footer>
+</div></body>
+</html>
