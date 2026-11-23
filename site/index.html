@@ -2,7 +2,7 @@
 <html lang="en-GB">
 <head>
 <meta charset="utf-8">
-<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com/gsi/client; frame-src https://accounts.google.com/gsi/; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; connect-src 'self' https://accounts.google.com/gsi/ https://oauth2.googleapis.com https://www.googleapis.com https://youtubeanalytics.googleapis.com; img-src 'self'; base-uri 'none'; form-action 'self'">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://accounts.google.com/gsi/client; frame-src https://accounts.google.com/gsi/; style-src 'self' 'unsafe-inline' https://accounts.google.com/gsi/style; connect-src 'self' https://instagram.platform.sovereignweb.site https://accounts.google.com/gsi/ https://oauth2.googleapis.com https://www.googleapis.com https://youtubeanalytics.googleapis.com; img-src 'self' https://instagram.platform.sovereignweb.site; base-uri 'none'; form-action 'self'">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>YouTube</title>
 <meta name="description" content="Manage, monitor and publish to your YouTube channel from your own browser, with YouTube's official API. An unofficial site, not made or endorsed by YouTube or Google.">
@@ -101,6 +101,10 @@ code{font-size:.9em}main a,main code{overflow-wrap:anywhere}
   <button id="forget" type="button" hidden>Disconnect</button>
 </div>
 <p id="status" class="status" role="status" aria-live="polite"></p>
+
+<h2>Videos</h2>
+<p class="lead">What the agent is publishing: each video with its credits and sources, and links to YouTube and Instagram once posted. Posting runs under a written rule; the owner reviews what is published.</p>
+<div id="videos"><p class="note">Loading the list of videos...</p></div>
 
 <h2>Monitor</h2>
 <div id="monitor"><p class="note">Your channel's subscribers, views and latest uploads appear here once connected.</p></div>

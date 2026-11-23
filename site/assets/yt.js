@@ -156,3 +156,34 @@ $('#forget').addEventListener('click', () => {
 });
 $('#publish').addEventListener('submit', publish);
 init();
+
+// Videos: the agent's Reels and Shorts, from the Instagram site's public feed (no token, no login).
+const FEED = 'https://instagram.platform.sovereignweb.site/data/reels.json';
+const STATE = { sent: 'Published', waiting: 'Waiting to post', 'deleted, to be reposted': 'Being re-made' };
+async function videos() {
+  const box = $('#videos');
+  let d;
+  try { const r = await fetch(FEED, { credentials: 'omit', referrerPolicy: 'no-referrer' }); if (!r.ok) throw 0; d = await r.json(); }
+  catch { box.textContent = ''; box.append(el('p', 'The list of videos could not be loaded just now.', 'note')); return; }
+  box.textContent = '';
+  const list = el('ul', null, 'reels');
+  for (const v of d.reels || []) {
+    const li = el('li', null, 'reel');
+    if (v.poster) { const img = el('img'); img.src = v.poster; img.alt = ''; img.loading = 'lazy'; img.width = 180; img.height = 320; li.append(img); }
+    const body = el('div');
+    body.append(el('h3', v.title));
+    const meta = [STATE[v.state] || v.state, v.duration_s ? `${v.duration_s} s` : '', v.published_at ? String(v.published_at).slice(0, 16).replace('T', ' ') + ' UTC' : ''].filter(Boolean).join(' · ');
+    body.append(el('p', meta, 'note'));
+    const links = el('p', null, 'links');
+    const add = (href, text) => { if (!href) return; const a = el('a', text); a.href = href; a.rel = 'noopener noreferrer'; links.append(a); };
+    add(v.page, 'Watch, with credits and sources');
+    add(v.channels && v.channels.youtube, 'On YouTube');
+    add(v.channels && v.channels.instagram, 'On Instagram');
+    body.append(links);
+    li.append(body);
+    list.append(li);
+  }
+  if (!list.children.length) box.append(el('p', 'No videos yet.', 'note')); else box.append(list);
+  box.append(el('p', `List updated ${String(d.updated || '').replace('T', ' ')}, from the agent's Instagram site.`, 'note'));
+}
+videos();

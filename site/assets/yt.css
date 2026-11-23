@@ -31,3 +31,10 @@ button:disabled{opacity:1;background:var(--bg);color:var(--muted);border-color:v
 main p.lead,main ul.plain,main ul.plain li{color:var(--fg)}
 footer,.note{font-size:.9rem}
 .pub label,.mark,thead th,.stats dt{font-size:.875rem}
+.reels{list-style:none;padding:0;margin:1rem 0;display:grid;gap:1.25rem;grid-template-columns:repeat(auto-fill,minmax(16rem,1fr))}
+.reel{display:flex;gap:.9rem;align-items:flex-start;border-top:1px solid var(--line);padding-top:.9rem}
+.reel img{width:90px;height:160px;object-fit:cover;border-radius:6px;background:var(--line);flex:none}
+.reel h3{font-size:1rem;margin:0 0 .3rem;line-height:1.35}
+.reel .note{margin:0 0 .3rem}
+.reel .links{display:flex;flex-direction:column;gap:.2rem;margin:0}
+#connect:disabled,.pub button:disabled{background:var(--bg);color:var(--muted);border-color:var(--control);cursor:not-allowed}
