@@ -186,4 +186,4 @@ async function videos() {
   if (!list.children.length) box.append(el('p', 'No videos yet.', 'note')); else box.append(list);
   box.append(el('p', `List updated ${String(d.updated || '').replace('T', ' ')}, from the agent's Instagram site.`, 'note'));
 }
-videos();
+{ const sv = $('#showvideos'); if (sv) sv.addEventListener('click', () => { $('#videos').textContent = 'Loading the list of videos...'; videos(); }); }
